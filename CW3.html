@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html{
+            font-family: Roboto;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+        .header {
+            font-weight: bold;
+        }
+        table {
+            width:100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+
+        }
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        table#t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function displayTable(str) {
+            var myAJAX = new XMLHttpRequest();
+            myAJAX.open("GET","CW3PHP.php?id=*", true)
+            myAJAX.send()   //Sends to getdata.php
+            myAJAX.onreadystatechange = function () {
+                // alert(myAJAX.readyState);
+                if(myAJAX.readyState == 4 && myAJAX.status == 200){
+                    document.getElementById("txtHint").innerHTML = myAJAX.responseText;     //Sets the return for the div
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2>Users Table</h2>
+
+<table>
+    <tr class="header">
+        <th class="header">Name</th>
+        <th class="header">Username</th>
+        <th class="header">Action</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<br>
+
+</body>
+</html>

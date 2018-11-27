@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Title of the document</title>
+            <script type="text/javascript">
+                function Welcome(str) {
+                    var myAJAX = new XMLHttpRequest();
+                    myAJAX.open("GET","getdata.php?id=" + str, true)
+                    myAJAX.send()   //Sends to getdata.php
+                    myAJAX.onreadystatechange = function () {
+                        // alert(myAJAX.readyState);
+                        if(myAJAX.readyState == 4 && myAJAX.status == 200){
+                            document.getElementById("txtHint").innerHTML = myAJAX.responseText;     //Sets the return for the div
+                        }
+                    }
+                }
+            </script>
+        </head>
+<body>
+<button type="button" onclick="Welcome('Sue Jones')">Click</button>
+<div id="txtHint" />
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
